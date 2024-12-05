@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Konit", sans-serif;
+        }
+
+        body {
+            background-color: #2b2513;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 99;
+        }
+
+        .navbar nav {
+            background-image: url(./gold.webp);
+            height: 90px;
+            width: 100%;
+            text-align: right;
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-position-x: 0%;
+            background-position-y: 50%;
+            position: relative;
+            box-shadow: 0 0 10px 10px rgba(30, 23, 21, 0.8), inset 0 0 10px 10px rgba(30, 23, 21, 0.8);
+            border-bottom: 4px solid #8b7945;
+        }
+
+        .navbar nav::after {
+            content:  "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(30, 23, 21, 0.4), rgba(30, 23, 21, 0.9), rgba(30, 23, 21, 1), rgba(30, 23, 21, 1));
+            z-index: 1;
+        }
+
+        .navbar .right {
+            position: absolute;
+            z-index: 10;
+            right: 20px;
+            width: 550px;
+            padding-right: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #8b7945;
+            font-size: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.1s ease-in;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 1px #8b7945, 0 0 30px #8b7945;
+        }
+
+        .hero1 {
+            width: 100vw;
+            height: 100vh;
+            /* background-color: black; */
+            display: flex;
+        }
+
+        .hero1 .left {
+            display: flex;
+            justify-content: center;
+            width: 50vw;
+        }
+
+        .hero1 .left .text {
+            margin-top: 320px;
+            margin-left: 40px;
+        }
+
+        .hero1 .left .text p {
+            color: beige;
+            font-size: 15px;
+            font-weight: 100;
+            margin-left: 8px;
+        }
+
+        .hero1 .left .text .main {
+            color: #8b7945;
+            font-size: 115px;
+            text-shadow: 0 0 1px #b39b56, 0 0 30px #9e8a4d;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .hero1 .right {
+            width: 50vw;
+            height: 100%;
+            position: relative;
+        }
+
+        .hero1 .circle, .hero1 .image {
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            border: 4px solid #8b7945;
+            position: absolute;
+        }
+
+        .hero1 .image {
+            top: 235px;
+            right: 300px;
+            background-color: #2b2513;
+            box-shadow: inset 0 0 10px 5px black;
+            background-image: url(./face.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position-y: 30%;
+            background-position-x: 20%;
+        }
+
+        .hero1 .circle {
+            border: 1px solid #2b2513;
+            box-shadow: 0 0 10px 1px #b39b56, inset 0 0 10px 1px #b39b56;
+            top: 210px;
+            right: 250px;
+        }
+
+        .hero1 .circle.too {
+            top: 240px;
+            right: 350px;
+            box-shadow: 0 0 10px 1px black, inset 0 0 10px 1px black;
+        }
+
+        .hero1 .circle.tree {
+            top: 280px;
+            right: 270px;
+            box-shadow: 0 0 10px 1px beige, inset 0 0 10px 1px beige;
+        }
+
+        .hero2 {
+            height: 100vh;
+            width: 100%;
+            background-color: #8b7945;    
+            box-shadow: 0 0 10px 20px rgba(30, 23, 21, 0.8);
+        }
+
+        .hero2 .title {
+            width: 100vw;
+            height: 100px;
+        }
+
+        .hero2 .title p {
+            font-size: 45px;
+            font-weight: 700;
+            width: fit-content;
+            margin: 0 auto;
+            padding-top: 40px;
+            color: beige;
+        }
+
+        .hero2 span {
+            color: #2b2513;
+            padding: 2px 4px;
+            text-shadow: 0 0 3px black;
+        }
+
+        .hero2 .content {
+            display: flex;
+            height: 500px;
+            width: 85vw;
+            margin: 0 auto;
+            margin-top: 150px;
+            box-shadow: inset 0 0 10px 5px #000;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 25px;
+            background-image: url(silver.webp);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            position: relative;
+        }
+
+        .hero2 .content::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(30, 23, 21, 0.8)), linear-gradient(to left, rgba(0, 0, 0, 0), rgba(30, 23, 21, 0.8));
+            z-index: 1;
+            border-radius: 25px;
+        }
+
+        .hero2 .left, .hero2 .right {
+            width: 25%;
+            height: 20%;
+            z-index: 3;
+        }
+
+        .hero2 .middle {
+            width: 50%;
+            height: 40%;
+            z-index: 3;
+        }
+
+        .hero2 .left .title, .hero2 .right .title, .hero2 .middle .title {
+            color: beige;
+            font-size: 35px;
+            font-weight: 700;
+            width: 100%;
+            text-shadow: 0 0 10px#000;
+            height: 55px;
+        }
+
+        .hero2 .left .title {
+            text-align: right;
+        }
+
+        .hero2 .middle .title {
+            text-align: center;
+            font-size: 55px;
+        }
+
+
+        .hero2 .content .text {
+            font-weight: 100;
+            color: beige;
+            width: 100px;
+            text-shadow: 0 0 3px black;
+        }
+
+        .hero2 .content .left .text {
+            text-align: right;
+            margin-left: 298px;
+        }
+
+        .hero2 .content .middle .text {
+            text-align: center;
+            font-size: 25px;
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 300px;
+        }
+        
+        .hero3 {
+            height: 120vh;
+            width: 100%;
+        }
+
+        .hero3 .title {
+            height: 100px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .hero3 .title p {
+            font-size: 45px;
+            color: #8b7945;
+            width: fit-content;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+
+        .hero3 .subtitle {
+            font-size: 30px;
+            color: beige;
+            margin: 10px 0 0 20px;
+        }
+
+        .hero3 .sd, .hero3 .smp{
+            width: 95%;
+            height: 200px;
+            /* background-color: #000; */
+            margin: 45px auto;
+            border-radius: 25px;
+            box-shadow: inset 0 0 10px 8px #000;
+            position: relative;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .hero3 .sd::after, .hero3 .smp::after{
+            content:  "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 25px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(30, 23, 21, 1)), linear-gradient(to left, rgba(0, 0, 0, 0), rgba(30, 23, 21, 1));
+            z-index: 1;
+        }
+
+        .hero3 .sd {
+            background-image: url(./gedung\ ipeka\ 1.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position-y: 50%
+        }
+
+        .hero3 .smp {
+            background-image: url(./gedung\ igs.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position-y: 50%
+        }
+
+        .hero3 .sd p, .hero3 .smp p {
+            color: beige;
+            text-shadow: 0 0 10px #8b7945;
+            position: absolute;
+            top: 85px;
+            left: 100px;
+            font-weight: 700;
+            font-size: 25px;
+            z-index: 3;
+        }
+
+        .hero3 .sd:hover, .hero3 .smp:hover {
+            height: 600px;
+        }
+
+        .hero3 .sd:hover::after, .hero3 .smp:hover::after {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(30, 23, 21, 0.4)), linear-gradient(to left, rgba(0, 0, 0, 0), rgba(30, 23, 21, 0.4));
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <div class="right">
+                <a href="#home" class="home">HOME</a>
+                <a href="#about" class="about">ABOUT</a>
+                <a href="#experience" class="about">EXPIRIENCE</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero1" id="home">
+        <div class="left">
+            <div class="text">
+                <p>Hi, I am</p>
+                <p class="main">Daniel</p>
+                <p style="color: #8b7945; text-shadow: 0 0 20px black;">a web developer</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="circle"></div>
+            <div class="circle too"></div>
+            <div class="circle tree"></div>
+            <div class="image"></div>
+        </div>
+    </div>
+
+    <div class="hero2" id="about">
+        <div class="title">
+            <p>ABOUT <span>ME</span></p>
+        </div>
+        <div class="content">
+            <div class="left">
+                <p class="title">student</p>
+                <p class="text">Currently in high school</p>
+            </div>
+            <div class="middle">
+                <p class="title">≺coder≻</p>
+                <p class="text">Focusing on creating the most eye-catching and elegant websites</p>
+            </div>
+            <div class="right">
+                <p class="title">designer</p>
+                <p class="text">Powerpoint designer and part-time artist</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero3" id="experience">
+        <div class="title">
+            <p>EXPERIENCE</p>
+        </div>
+        <div class="content">
+            <p class="subtitle">EDUCATION</p>
+            <div class="sd">
+                <p>ELEMENTARY</p>
+            </div>
+            <div class="smp">
+                <p>MIDDLE - HIGH</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
